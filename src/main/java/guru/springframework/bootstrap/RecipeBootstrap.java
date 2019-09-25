@@ -58,7 +58,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         guacRecipe.setNotes(guacNotes);
         guacNotes.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), unitOfMeasureRepository.findByDescription("Each").get(), guacRecipe));
+        guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), unitOfMeasureRepository.findByDescription("Each").get()));
         guacRecipe.getCategories().add(mexicanCategory);
 
         recipes.add(guacRecipe);
